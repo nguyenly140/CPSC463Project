@@ -180,12 +180,12 @@ INSERT INTO `products` (`product_id`, `product_cat`, `product_brand`, `product_t
 
 CREATE TABLE `user_info` (
   `user_id` int(10) NOT NULL,
-  `first_name` varchar(100) NOT NULL,
-  `last_name` varchar(100) NOT NULL,
-  `email` varchar(300) NOT NULL,
-  `password` varchar(300) NOT NULL,
-  `mobile` varchar(10) NOT NULL,
-  `address1` varchar(300) NOT NULL,
+  `first_name` varchar(10) NOT NULL,
+  `last_name` varchar(10) NOT NULL,
+  `email` varchar(25) NOT NULL,
+  `password` varchar(10) NOT NULL,
+  `mobile` int(10) NOT NULL,
+  `address1` varchar(30) NOT NULL,
   `address2` varchar(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -194,11 +194,11 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`user_id`, `first_name`, `last_name`, `email`, `password`, `mobile`, `address1`, `address2`) VALUES
-(1, 'Christine', 'Randolph', 'randolphc@gmail.com', '25f9e794323b453885f5181f1b624d0b', '8389080183', '2133  Hill Haven Drive', 'Terra Stree'),
-(2, 'Will', 'Willams', 'willainswill@gmail.com', '25f9e794323b453885f5181f1b624d0b', '8389080183', '4567  Orphan Road', 'WI'),
+(1, 'Christine', 'Randolph', 'randolphc@gmail.com', '25f9e79432', '8389080183', '2133  Hill Haven Drive', 'Terra Stree'),
+(2, 'Will', 'Willams', 'willainswill@gmail.com', '3b453885f5', '8389080183', '4567  Orphan Road', 'WI'),
 (3, 'Demo', 'Name', 'demo@gmail.com', 'password', '9876543210', 'demo ad1', 'ademo ad2'),
-(5, 'Steeve', 'Rogers', 'steeve1@gmail.com', '305e4f55ce823e111a46a9d500bcb86c', '9876547770', '573  Pinewood Avenue', 'MN'),
-(6, 'Melissa', 'Gilbert', 'gilbert@gmail.com', '305e4f55ce823e111a46a9d500bcb86c', '7845554582', '1711  McKinley Avenue', 'MA');
+(5, 'Steeve', 'Rogers', 'steeve1@gmail.com', '305e4f55ce', '9876547770', '573  Pinewood Avenue', 'MN'),
+(6, 'Melissa', 'Gilbert', 'gilbert@gmail.com', '823e111a46', '7845554582', '1711  McKinley Avenue', 'MA');
 
 --
 -- Indexes for dumped tables
