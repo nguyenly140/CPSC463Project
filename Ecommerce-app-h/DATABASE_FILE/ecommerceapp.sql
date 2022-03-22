@@ -247,7 +247,8 @@ ALTER TABLE `products`
 -- Indexes for table `user_info`
 --
 ALTER TABLE `user_info`
-  ADD PRIMARY KEY (`user_id`);
+  ADD PRIMARY KEY (`user_id`),
+  ADD KEY `chk_mobile` (`mobile`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -298,6 +299,10 @@ ALTER TABLE `user_info`
 ALTER TABLE `products`
   ADD CONSTRAINT `fk_product_brand` FOREIGN KEY (`product_brand`) REFERENCES `brands` (`brand_id`),
   ADD CONSTRAINT `fk_product_cat` FOREIGN KEY (`product_cat`) REFERENCES `categories` (`cat_id`);
+
+-- Constraints for `mobile`
+ALTER TABLE `user_info`
+  ADD CONSTRAINT `chk_mobile` CHECK (`mobile` >= 0000000000 AND `mobile` <= 9999999999);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

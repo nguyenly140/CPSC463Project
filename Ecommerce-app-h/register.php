@@ -25,11 +25,20 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	} else {
-		if(!preg_match($name,$f_name)){
+	if(!preg_match($name,$f_name)){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 				<b>this $f_name is not valid..!</b>
+			</div>
+		";
+		exit();
+	}
+	if(strlen($f_name) > 10){
+		echo "
+			<div class='alert alert-warning'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				<b>First Name must be have less than 11 characters</b>
 			</div>
 		";
 		exit();
@@ -43,6 +52,15 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	}
+	if(strlen($l_name) > 10){
+		echo "
+			<div class='alert alert-warning'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				<b>Last Name must be have less than 11 characters</b>
+			</div>
+		";
+		exit();
+	}
 	if(!preg_match($emailValidation,$email)){
 		echo "
 			<div class='alert alert-warning'>
@@ -52,16 +70,16 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 		";
 		exit();
 	}
-	if(strlen($password) < 9 ){
+	if(strlen($email) > 25){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
-				<b>Password is weak</b>
+				<b>Email Address must be have less than 25 characters included with @domainname.com</b>
 			</div>
 		";
 		exit();
 	}
-	if(strlen($repassword) < 9 ){
+	if(strlen($password) < 9 ){
 		echo "
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
@@ -78,6 +96,15 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 			</div>
 		";
 	}
+	// if(strlen($repassword) < 9 ){
+	// 	echo "
+	// 		<div class='alert alert-warning'>
+	// 			<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+	// 			<b>Password is weak</b>
+	// 		</div>
+	// 	";
+	// 	exit();
+	// }
 	if(!preg_match($number,$mobile)){
 		echo "
 			<div class='alert alert-warning'>
@@ -92,6 +119,24 @@ if(empty($f_name) || empty($l_name) || empty($email) || empty($password) || empt
 			<div class='alert alert-warning'>
 				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
 				<b>Mobile number must be 10 digit</b>
+			</div>
+		";
+		exit();
+	}
+	if(strlen($address1) > 55){
+		echo "
+			<div class='alert alert-warning'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				<b>Address 1 name is way to long it more then 55 characters</b>
+			</div>
+		";
+		exit();
+	}
+	if(strlen($address2) > 40){
+		echo "
+			<div class='alert alert-warning'>
+				<a href='#' class='close' data-dismiss='alert' aria-label='close'>&times;</a>
+				<b>Address 2 name is way to long it more then 40 characters</b>
 			</div>
 		";
 		exit();
